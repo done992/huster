@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CLASSPATH=$HADOOP_CONF_DIR:$YARN_CONF_DIR:$HDFS_CONF_DIR:$HUSTER_CORE_HOME/lib/huster/*:$HUSTER_CORE_HOME/lib/huster/lib/*:$HUSTER_CORE_HOME/conf:$CLASSPATH
+PARAMS=$@
+
+echo "Starting submit YARN job"
+echo "CLASSPATH:$CLASSPATH"
+echo "PARAMS:$PARAMS"
+
+java $JAVA_OPTS -cp $CLASSPATH cn.enjoy.huster.cli.HusterCli $PARAMS
